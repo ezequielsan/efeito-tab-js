@@ -1,0 +1,74 @@
+:root {
+    --black: #130f0d;
+    --primary: #fd951f;
+    --white: #f0f0f9;
+}
+
+body {
+    height: 100vh;
+    user-select: none;
+    background: var(--black);
+    color: var(--white);
+
+}
+
+header {
+    margin-top: 32px;
+    text-align: center;
+    height: 100px;
+    color: var(--primary);
+}
+
+main {
+    margin: 0 auto;
+    width: 320px;
+}
+
+.tab-links {
+    margin-bottom: 32px;
+}
+
+button {
+    color: var(--white);
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 16px 14px;
+    outline: none;
+    cursor: pointer; /* remove o contorno */
+    position: relative;
+
+}
+
+button::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 2px;
+    width: 0;
+    background: var(--primary);
+    transition: .4s;
+
+}
+
+button:hover::after,
+button.active::after {
+    width: 100%;
+}
+
+.tab-content section {
+    animation: up 1s;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
